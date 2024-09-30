@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://kit.fontawesome.com/a2dc1da16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+
+      <div class="dropdown1">
+        <i class="fa-solid fa-bars dropbtn1"></i>
+        <div class="links dropdown-content">
+            <a href="frontpage.html">HOME</a>
+            <a href="#section3">SHOP</a>
+            <a href="index.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </div>
+
+        <div class="logo-div">
+            <a href="frontpage.html">
+                <img src="images/shoes logo.png">
+                <p>FootSteps</p>
+            </a>
+        </div>
+
+        <div class="cp-div">
+
+            <div class="profile">
+                <a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="contact-section">
+
+        <div class="color-div">
+
+            <div class="detail-page">
+                <h2>Contact Us</h2>
+
+                <div class="name-bar">
+                    <div class="first-name">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="firstName" placeholder="First Name">
+                    </div>
+
+                    <div class="last-name">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="lastName" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="email-bar">
+                    <label for="email-bar">Email</label>
+                    <input type="email" name="email" id="Email" placeholder="Email">
+                </div>
+
+                <div class="phone-no">
+                    <label for="phone-no">Phone Number</label>
+                    <input type="tel" name="phone-number" id="phone-detail" placeholder="+XX XXXXXXXXXX">
+                </div>
+
+                <div class="message-bar">
+                  <label for="message-bar">Message</label>
+                  <textarea name="Message Bar" id="messageBar" placeholder="Write your message" cols="50"></textarea>
+                </div>
+
+                <button class="send-btn" onclick="showToast('<i class=\'fa-solid fa-square-check\' style=\'color: darkred;\'></i> Your message has sent successful!')">Send Message</button>
+
+            </div>
+
+            <div class="img-page">
+              <img src="images/contact img.jpg">
+            </div>
+            
+        </div>
+    </section>
+    
+
+
+    <script>
+        const phoneNumberInput = document.getElementById('phone-detail');
+
+phoneNumberInput.addEventListener('keypress', (e) => {
+  // Allow only numbers and plus sign
+  if (e.charCode < 48 || e.charCode > 57) {
+    if (e.charCode !== 43) { // 43 is the ASCII code for plus sign
+      e.preventDefault();
+    }
+  }
+});
+
+phoneNumberInput.addEventListener('focus', () => {
+  // Add country code placeholder when input is focused
+  phoneNumberInput.placeholder = "+92 XXXXXXXXXX";
+});
+
+phoneNumberInput.addEventListener('blur', () => {
+  // Remove country code placeholder when input is blurred
+  phoneNumberInput.placeholder = "";
+});
+
+// Allow Pakistani phone number to be typed
+phoneNumberInput.addEventListener('input', () => {
+  const inputValue = phoneNumberInput.value;
+  if (inputValue.startsWith('+92')) {
+    // Allow Pakistani phone number to be typed
+    if (inputValue.length > 3 && inputValue.length <= 13) {
+      return;
+    } else {
+      phoneNumberInput.value = inputValue.substring(0, 13);
+    }
+  } else {
+    // Add Pakistani country code if not present
+    phoneNumberInput.value = '+92' + inputValue;
+  }
+});
+
+function showToast(msg) {
+    let toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.innerHTML = msg;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  }
+
+  // drop down btn
+
+// Get the button and the dropdown content
+const ddbutton = document.querySelector('.dropbtn1');
+const ddContent = document.querySelector('.dropdown-content');
+
+// Toggle the dropdown content when the button is clicked
+ddbutton.addEventListener('click', function() {
+    ddContent.classList.toggle('show-ddbtn');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn1')) {
+        if (ddContent.classList.contains('show-ddbtn')) {
+            ddContent.classList.remove('show-ddbtn');
+        }
+    }
+});
+    </script>
+</body>
+</html>

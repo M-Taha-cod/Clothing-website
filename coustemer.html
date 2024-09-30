@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coustomer Serivce</title>
+    <link rel="stylesheet" href="coustemer.css">
+    <script src="https://kit.fontawesome.com/a2dc1da16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header>
+
+        <div class="dropdown1">
+            <i class="fa-solid fa-bars dropbtn1"></i>
+            <div class="links dropdown-content">
+                <a href="frontpage.html">HOME</a>
+                <a href="#section3">SHOP</a>
+                <a href="index.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </div>
+
+        <div class="logo-div">
+            <a href="frontpage.html">
+                <img src="images/shoes logo.png">
+                <p>FootSteps</p>
+            </a>
+        </div>
+
+        <div class="cp-div">
+
+            <div class="profile">
+                <a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="coustemer-service">
+
+        <h1 id="FAQ-part">FAQ</h1>
+
+        <h2>General Questions</h2>
+
+        <h3>What are your shipping options?</h3>
+        <p>We offer [list of shipping options, e.g., standard, express, free shipping for orders over a certain amount]. Please refer to our shipping policy for more details.</p>
+
+        <h3>What is your return policy?</h3>
+        <p>We offer [number] days for returns or exchanges. Please refer to our return policy for more details.</p>
+
+        <h3>How can I track my order?</h3>
+        <p>Once your order is shipped, you will receive a tracking number. You can track your order using the tracking link provided in your shipping confirmation email.</p>
+
+        <h3>Do you offer gift wrapping?</h3>
+        <p>Yes, we offer gift wrapping services for an additional fee. Please select this option during checkout.</p>
+
+        <h3>How can I contact customer support?</h3>
+        <p>You can contact our customer support team by email at [email address] or by phone at [phone number].</p>
+
+        <h2>Product Questions</h2>
+
+        <h3>Are your products authentic?</h3>
+        <p>Yes, all of our products are authentic and come with original tags and packaging.</p>
+
+        <h3>What is the material of the [product name]?</h3>
+        <p>The clothes is made of Polyster.</p>
+
+        <h3>How does this item fit?</h3>
+        <p>Please refer to our size chart for accurate measurements. We also provide detailed product descriptions to help you choose the right size.</p>
+
+        <h3>Can I customize this product?</h3>
+        <p>[Answer based on your customization options, e.g., Yes, we offer custom embroidery or personalization options.]</p>
+
+        <h2>Payment Questions</h2>
+
+        <h3>What payment methods do you accept?</h3>
+        <p>We accept [list of accepted payment methods, e.g., credit cards, PayPal, Apple Pay].</p>
+
+        <h3>Is my payment information secure?</h3>
+        <p>Yes, we use secure payment gateways to protect your personal information.</p>
+
+        <h3>Can I use a coupon code?</h3>
+        <p>Yes, you can enter a coupon code during checkout.</p>
+
+        <h1 id="HS-page">Help and Support</h1>
+
+        <h3>Contact Us:</h3>
+        <p>Email: [tahashahid471@gmail.com]</p>
+        <p>Phone: [+923255742410]</p>
+
+        <h1 id="billing-page">Billing Cycle</h1>
+
+        <h3>Payment Methods:</h3>
+        <p>Online payment and cash on delivery.</p>
+        <p>Any card e.g mastercard, visa etc..</p>
+
+        <h1 id="PP-page">Privacy Policy</h1>
+
+        <h3>Data Collection:</h3>
+        <p>We collect personal information such as your name, email address, shipping address, and payment information when you place an order or create an account on our website.</p>
+
+        <h3>Data Usage:</h3>
+        <p>We use your personal information to process your orders, provide customer support, and send you marketing communications.</p>
+
+        <h3>Data Security:</h3>
+        <p>We implement security measures to protect your personal information from unauthorized access.</p>
+
+        <h3>Your Rights:</h3>
+        <p>You have the right to access, correct, or delete your personal information.</p>
+
+        <h3>Third-Party Services:</h3>
+        <p>We may use third-party services to process payments and analyze website traffic. These third-party services may have their own privacy policies.</p>
+
+        <h3>Changes to This Policy:</h3>
+        <p>We may update this privacy policy from time to time. Please check this page regularly for any changes.</p>
+
+    </section>
+
+
+    <script>
+         // drop down btn
+
+// Get the button and the dropdown content
+const ddbutton = document.querySelector('.dropbtn1');
+const ddContent = document.querySelector('.dropdown-content');
+
+// Toggle the dropdown content when the button is clicked
+ddbutton.addEventListener('click', function() {
+    ddContent.classList.toggle('show-ddbtn');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn1')) {
+        if (ddContent.classList.contains('show-ddbtn')) {
+            ddContent.classList.remove('show-ddbtn');
+        }
+    }
+});
+    </script>
+    
+</body>
+</html>

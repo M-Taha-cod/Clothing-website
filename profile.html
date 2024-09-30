@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <script src="https://kit.fontawesome.com/a2dc1da16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+
+      <div class="dropdown1">
+        <i class="fa-solid fa-bars dropbtn1"></i>
+        <div class="links dropdown-content">
+            <a href="frontpage.html">HOME</a>
+            <a href="#section3">SHOP</a>
+            <a href="index.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </div>
+
+        <div class="logo-div">
+            <a href="">
+                <img src="images/shoes logo.png">
+                <p>FootSteps</p>
+            </a>
+        </div>
+
+        <div class="cp-div">
+
+            <div class="profile">
+                <a href="">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="profile-section">
+
+    <div class="color-div">
+        
+        <div class="acc-detail">
+            <h2>Account Details</h2>
+
+            <div class="name-det">
+                <h3>Full Name:</h3>
+                <div>
+                    <input type="text" name="name" id="name-detail" placeholder="Full Name">
+                    <a href="#" onclick="toggleEdit('name-detail')">save</a>
+                </div>
+            </div>
+
+            <div class="num-det">
+                <h3>Phone Number:</h3>
+                <div>
+                    <input type="tel" name="phone-number" id="phone-detail" placeholder="+XX XXXXXXXXXX">
+                    <a href="#" onclick="toggleEdit('phone-detail')">save</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-detail">
+            <h2>Address Details</h2>
+            <div class="address-list">
+                <!-- addresses will be listed here -->
+            </div>
+            <button id="add-btn">Add New Address</button>
+            <div class="new-address" style="display: none;">
+                <label for="new-address-input">Enter new address:</label>
+                <div>
+                    <input type="text" id="new-address-input" />
+                    <button id="save-btn">save</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="order-history">
+        <h2>Order History</h2>
+        <p>You haven't placed any orders yet.</p>
+    </div>  
+
+    </section>
+
+
+
+    
+    <script>
+        const phoneNumberInput = document.getElementById('phone-detail');
+
+phoneNumberInput.addEventListener('keypress', (e) => {
+  // Allow only numbers and plus sign
+  if (e.charCode < 48 || e.charCode > 57) {
+    if (e.charCode !== 43) { // 43 is the ASCII code for plus sign
+      e.preventDefault();
+    }
+  }
+});
+
+phoneNumberInput.addEventListener('focus', () => {
+  // Add country code placeholder when input is focused
+  phoneNumberInput.placeholder = "+92 XXXXXXXXXX";
+});
+
+phoneNumberInput.addEventListener('blur', () => {
+  // Remove country code placeholder when input is blurred
+  phoneNumberInput.placeholder = "";
+});
+
+// Allow Pakistani phone number to be typed
+phoneNumberInput.addEventListener('input', () => {
+  const inputValue = phoneNumberInput.value;
+  if (inputValue.startsWith('+92')) {
+    // Allow Pakistani phone number to be typed
+    if (inputValue.length > 3 && inputValue.length <= 13) {
+      return;
+    } else {
+      phoneNumberInput.value = inputValue.substring(0, 13);
+    }
+  } else {
+    // Add Pakistani country code if not present
+    phoneNumberInput.value = '+92' + inputValue;
+  }
+});
+
+
+// bar edit
+
+function toggleEdit(id) {
+  var link = event.target;
+  var input = document.getElementById(id);
+  
+  if (input.disabled) {
+    input.disabled = false;
+    input.focus();
+    input.setSelectionRange(0, 0);
+    link.textContent = "save"; // Initial state: "save"
+    localStorage.setItem('linkText', 'save'); // Store the link text in local storage
+  } else {
+    input.disabled = true;
+    link.textContent = "edit"; // Change to "edit" when editing is done
+    localStorage.setItem('linkText', 'edit'); // Store the link text in local storage
+    localStorage.setItem('inputValue', input.value); // Store the input value in local storage
+  }
+}
+
+// On page load, retrieve the stored link text and input value, and update the link and input
+document.addEventListener('DOMContentLoaded', function() {
+  var storedLinkText = localStorage.getItem('linkText');
+  var storedInputValue = localStorage.getItem('inputValue');
+  var link = document.getElementById('your-link-id'); // Replace with your link ID
+  var input = document.getElementById('your-input-id'); // Replace with your input ID
+  
+  if (storedLinkText) {
+    link.textContent = storedLinkText;
+    if (storedLinkText === 'edit') {
+      input.disabled = true;
+    } else {
+      input.disabled = false;
+    }
+  }
+  
+  if (storedInputValue) {
+    input.value = storedInputValue;
+  }
+});
+
+let addressList = document.querySelector('.address-list');
+
+document.getElementById('add-btn').addEventListener('click', function() {
+    document.querySelector('.new-address').style.display = 'block';
+});
+
+document.getElementById('save-btn').addEventListener('click', function() {
+    let newAddress = document.getElementById('new-address-input').value;
+    if (newAddress) {
+        let addressHTML = `<p>${newAddress} <button class="remove-btn">Remove</button></p>`;
+        addressList.innerHTML += addressHTML;
+        document.getElementById('new-address-input').value = '';
+        document.querySelector('.new-address').style.display = 'none';
+    }
+});
+
+addressList.addEventListener('click', function(event) {
+    if (event.target.classList.contains('remove-btn')) {
+        event.target.parentNode.remove();
+    }
+});
+
+ // drop down btn
+
+// Get the button and the dropdown content
+const ddbutton = document.querySelector('.dropbtn1');
+const ddContent = document.querySelector('.dropdown-content');
+
+// Toggle the dropdown content when the button is clicked
+ddbutton.addEventListener('click', function() {
+    ddContent.classList.toggle('show-ddbtn');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn1')) {
+        if (ddContent.classList.contains('show-ddbtn')) {
+            ddContent.classList.remove('show-ddbtn');
+        }
+    }
+});
+
+    </script>
+</body>
+</html>

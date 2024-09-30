@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail-page</title>
+    <link rel="stylesheet" href="frontpage.css">
+    <script src="https://kit.fontawesome.com/a2dc1da16d.js" crossorigin="anonymous"></script>
+    <style>
+        #cart-icon[data-quantity]::after{
+        top: 50px;
+        right: 223px;
+    }
+
+    @media (max-width: 2560px ) and (min-width:1921px ) {
+        #cart-icon[data-quantity]::after{
+        top: 105px;
+        right: 350px;
+        }
+    }
+
+    @media (max-width: 1920px ) and (min-width:1601px ) {
+        #cart-icon[data-quantity]::after{
+        top: 100px;
+        right: 295px;
+        }
+    }
+
+    @media (max-width: 1600px ) and (min-width: 1537px ) {
+        #cart-icon[data-quantity]::after{
+        top: 100px;
+        right: 250px;
+        }
+    }
+
+    @media (max-width: 1536px ) and (min-width: 1441px ) {
+        #cart-icon[data-quantity]::after{
+        top: 100px;
+        right: 250px;
+        }
+    }
+
+    @media (max-width: 1440px ) and (min-width: 1367px ) {
+        #cart-icon[data-quantity]::after{
+        top: 85px;
+        right: 230px;
+        }
+    }
+
+    @media (max-width: 1280px ) and (min-width: 1025px ) {
+        #cart-icon[data-quantity]::after{
+        top: 50px;
+        right: 205px;
+        }
+    }
+
+    @media (max-width: 1024px ) and (min-width: 821px ) {
+        #cart-icon[data-quantity]::after{
+        top: 75px;
+        right: 180px;
+        }
+    }
+
+    @media (max-width: 820px ) and (min-width: 811px ) {
+        #cart-icon[data-quantity]::after{
+        top: 65px;
+        right: 185px;
+        }
+    }
+
+    @media (max-width: 810px ) and (min-width: 801px ) {
+        #cart-icon[data-quantity]::after{
+        top: 65px;
+        right: 185px;
+        }
+    }
+
+    @media (max-width: 800px ) and (min-width: 769px ) {
+        #cart-icon[data-quantity]::after{
+        top: 65px;
+        right: 180px;
+        }
+    }
+
+    @media (max-width: 768px ) and (min-width: 700px ) {
+        #cart-icon[data-quantity]::after{
+        top: 55px;
+        right: 175px;
+        }
+    }
+
+    @media (max-width: 701px ) and (min-width: 500px ) {
+        #cart-icon[data-quantity]::after{
+        top: 55px;
+        right: 150px;
+        }
+    }
+
+    @media (max-width: 501px ) and (min-width: 400px ) {
+        #cart-icon[data-quantity]::after{
+        top: 29px;
+        right: 84px;
+        }
+    }
+
+    @media (max-width: 399px ) and (min-width: 370px ) {
+        #cart-icon[data-quantity]::after{
+        top: 29px;
+        right: 80px;
+        }
+    }
+
+    @media (max-width: 371px ) and (min-width: 10px ) {
+        #cart-icon[data-quantity]::after{
+        top: 29px;
+        right: 75px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+  <header>
+
+    <div class="dropdown1">
+        <i class="fa-solid fa-bars dropbtn1"></i>
+        <div class="links dropdown-content">
+            <a href="frontpage.html">HOME</a>
+            <a href="#section3">SHOP</a>
+            <a href="index.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </div>
+
+    <div class="logo-div">
+        <a href="frontpage.html">
+            <img src="images/shoes logo.png">
+            <p>FootSteps</p>
+        </a>
+    </div>
+
+    <div class="cp-div">
+
+        <div class="cart-div">
+            <p id="cart-icon" data-quantity="0"><span class="cartdiv-span">MY CART </span><i class="fa-solid fa-bag-shopping"></i></p>
+        </div>
+
+        <hr>
+
+        <div class="profile">
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+<div class="hr-div">
+  <hr>
+</div>
+
+   <!-- This file will be loaded dynamically when a product box is clicked -->
+  <div class="product-detail-page">
+
+    <div class="detail-img">
+
+      <p>Home > <span>Shirt 1</span></p>
+
+
+      <div class="product-img-container">
+      <img src="{{ productImage }}" alt="" class="product-img-cont">
+      </div>
+
+      <div class="small-detail-img">
+        <img src="{{ smallimg }}" alt="" class="small-img-1">
+        <img src="{{ smallimg }}" alt="" class="small-img-2">
+        <img src="{{ smallimg }}" alt="" class="small-img-3">
+        <img src="{{ smallimg }}" alt="" class="small-img-4">
+      </div>
+
+    </div>
+
+    <div class="product-detail">
+
+      <h1>{{ This is heading }}</h1>
+
+      <span class="price-detail">{{ productPrice }} Pkr</span>
+
+      <div class="size-quantity">
+
+        <div class="size-options">
+          <label for="size">Size </label>
+          <select id="size" name="size">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+
+          </select>
+        </div>
+  
+        <hr>
+
+        <div class="quantity-div">
+          <h3>Quantity </h3>
+          <div class="wrapper">
+              <span class="minus">-</span>
+              <span class="num" value="01">01</span>
+              <span class="plus">+</span>
+          </div>
+      </div>
+
+      </div>
+
+      <div class="cb-btn">
+
+        <button class="addtocart">ADD TO CART</button>
+        <div id="toast" class="toast"></div>
+
+      </div>
+
+      <div class="description">
+
+        <h2>Description:</h2>
+
+        <div class="info1-2">
+        
+        <div class="info1">
+            <h3>Main Material</h3>
+            <li>{{DATA IN JS}}</li>
+        </div>
+
+        <hr>
+
+        <div class="info2">
+          <h3>Material Family</h3>
+          <li>{{DATA IN JS}}</li>
+        </div>
+
+      </div>
+
+        <div class="info3">
+          <h3>Color</h3>
+          <li>{{DATA IN JS}}</li>
+          <p><span>Disclaimer:</span> Actual colors of the product may vary from the colors being displayed on your device.</p>
+        </div>
+
+        <div class="info4">
+          <h3>Collar Type</h3>
+          <li>{{DATA IN JS}}</li>
+        </div>
+
+
+        <div class="info5">
+          <h3>Fit</h3>
+          <li>{{DATA IN JS}}</li>
+        </div>
+
+
+      </div>  
+   </div>
+  </div>
+
+  <hr>
+  
+   <!-- section4 -->
+
+   <section class="section4" id="section4">
+
+    <div class="s4-heading">
+        <h1>OTHER FASHION CATEGORY</h1>
+    </div>
+
+    <div class="s4-parts">
+
+        <div class="s4-block">
+            <h2>MENS FASHION</h2>
+            <p>Explore our stylish and trendy men fashion</p>
+            <a href="frontpage.html#section3"><button>EXPLORE PRODUCTS <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+        </div>
+
+        <div class="s4-block">
+            <h2>WOMEN FASHION</h2>
+            <p>Explore our stylish and trendy women fashion</p>
+            <a href="frontpage.html#section3"><button>EXPLORE PRODUCTS <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+        </div>
+
+        <div class="s4-block">
+            <h2>HODIES & JACKETS</h2>
+            <p>Explore our stylish and trendy Hodies and Jackets for both genders</p>
+            <a href="frontpage.html#section3"><button>EXPLORE PRODUCTS <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+        </div>
+
+        <div class="s4-block">
+            <h2>SHOES & BAGS</h2>
+            <p>Explore our many type of shoes and bags that friendly and fashionable</p>
+            <a href="frontpage.html#section3"><button>EXPLORE PRODUCTS <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-details">
+
+        <div class="footer-heading">
+
+            <h1>EXPLORE OUR FASHION CATALOG</h1>
+            <p>Browse through our fashion catalog to find a wide range of stylish clothing options.</p>
+            <p>From classic looks to the latest trends, there's something for everyone.</p>
+
+            <a href="https://www.instagram.com/?hl=en" target="_blank"><button>SEE OUR INSTAGRAM <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+
+        </div>
+
+        <div class="footerlinks">
+
+            <div class="footer-link">
+                <h3>GENERAL</h3>
+                <div>
+                    <a href="index.html"><p>About Us</p></a>
+                    <a href="index.html"><p>Blog</p></a>
+                    <a href="index.html"><p>How it Works</p></a>
+                    <a href="contact.html"><p>Contact Us</p></a>
+                </div>
+            </div>
+    
+            <div class="footer-link" id="fashion-det">
+                <h3>PRODUCTS</h3>
+                <div>
+                    <a href="frontpage.html#section3"><p>Man Fashion</p></a>
+                    <a href="frontpage.html#section3"><p>Women Fashion</p></a>
+                    <a href="frontpage.html#section3"><p>Hoodies & Jackets</p></a>
+                    <a href="frontpage.html#section3"><p>Shoes</p></a>
+                </div> 
+            </div>
+    
+            <div class="footer-link">
+                <h3>CUSTOMER SERVICE</h3>
+                <div>
+                    <a href="coustemer.html#FAQ-page"><p>FAQ</p></a>
+                    <a href="coustemer.html#HS-page"><p>Help & Support</p></a>
+                    <a href="coustemer.html#billing-page"><p>Billing Cycle</p></a>
+                    <a href="coustemer.html#PP-page"><p>Privacy Policy</p></a>
+                </div>  
+            </div>
+    
+            <div class="footer-link">
+                <h3>SOCIAL MEDIA</h3>
+                <div>
+                    <a href="https://www.instagram.com/?hl=en" target="_blank"><p>Instagram</p></a>
+                    <a href="https://www.tiktok.com/?hl=en" target="_blank"><p>Tiktok</p></a>
+                    <a href="https://www.facebook.com/?hl=en" target="_blank"><p>Facebook</p></a>
+                    <a href="https://www.youtube.com/?hl=en" target="_blank"><p>Youtube</p></a>
+                </div>   
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- Cart Section -->
+
+    <!-- CART -->
+
+    <div class="cart">
+
+        <h2 class="cart-title">Your Cart</h2>
+
+        <div class="cart-content">
+        
+        </div>
+
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">R.s 0</div>
+        </div>
+
+        <button type="button" class="btn-buy">Pay Now</button>
+
+        <i class="fa-solid fa-x" id="close-cart"></i>
+
+    </div>
+
+
+
+  <script src="product-detail-page.js"></script>
+</body>
+</html>

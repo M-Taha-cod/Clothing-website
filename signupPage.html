@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a2dc1da16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+    <section class="signup-page">
+
+        <div class="su-img-part">
+            <img src="images/signup img.jpg">
+        </div>
+
+        <div class="signup-section">
+
+
+            <div class="signup-part">
+
+                <div class="logo" style="margin-bottom: 20px;">
+                    <a href="index.html">
+                        <img src="./images/shoes logo.png">
+                        <p>FootSteps</p>
+                    </a>
+                </div>
+
+                <h1>Create Account</h1>
+
+                <div class="name-section">
+                    <div class="name-part">
+                        <p>First Name <span>*</span></p>
+                        <form action="" method="post">
+                            <input type="text" name="first_name" placeholder="First Name">
+                        </form>
+                    </div>
+
+                    <div class="name-part">
+                        <p>Last Name <span>*</span></p>
+                        <form action="" method="post">
+                            <input type="text" name="last_name" placeholder="Last Name">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="su-email-part">
+                    <p>Email <span>*</span></p>
+                    <form action="" method="post" class="signup-email">
+                        <input type="email" name="email" placeholder="Email">
+                    </form>
+                </div>
+
+                <div class="signup-pass">
+                    <p>Password <span>*</span></p>
+                    <form action="" method="post" class="signup-password">
+                        <input type="password" name="password" placeholder="Password" id="password">
+                        <img src="images/eye-slash-regular.svg" class="pass-icon-signup" id="pass-icon" onclick="pass()">
+                    </form>
+                </div>
+
+                <div class="signup-button">
+                    <a href="frontpage.html"><button>Create Account</button></a>
+                </div>
+
+                <div class="last-text">
+                    <p>OR Already have a account <span><a href="loginpage.html">LOGIN</a></span>.</p>
+                    <p>By signing up you agree to our <span>Terms of Service</span> and <span>Privacy Policy.</span></p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

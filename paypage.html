@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <link rel="stylesheet" href="paypage.css">
+    <script src="https://kit.fontawesome.com/a2dc1da16d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header>
+
+        <div class="dropdown1">
+            <i class="fa-solid fa-bars dropbtn1"></i>
+            <div class="links dropdown-content">
+                <a href="frontpage.html">HOME</a>
+                <a href="#section3">SHOP</a>
+                <a href="index.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </div>
+
+        <div class="logo-div">
+            <a href="frontpage.html">
+                <img src="images/shoes logo.png">
+                <p>FootSteps</p>
+            </a>
+        </div>
+
+        <div class="cp-div">
+
+            <div class="profile">
+                <a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="payment-method">
+
+        <div class="both-parts">
+
+            <div class="detail-part">
+                <h2 class="detail-title">Payment details</h2>
+
+                <div class="payment-bars">
+
+                    <div class="email-bar">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email-bar" name="email" placeholder="Enter your email" >
+                    </div>
+
+                    <div class="card-bar">
+                        <label for="credit-card">Credit Card Number</label>
+                        <input type="text" id="cc-bar" name="credit-card" placeholder="XXXX XXXX XXXX XXXX" maxlength="12">
+                    </div>
+
+                    <div class="exp-cvv">
+                        <div class="expire-date">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="month" id="exp-bar" name="expiry-date" required>
+                        </div>
+
+                        <div class="cvv">
+                            <label for="cvv">CVV</label>
+                            <input type="text" name="cvv" id="threeCharInput" maxlength="3" placeholder="X X X">
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox" id="checkbox">
+                        <label for="checkbox">Remember me.</label>
+                    </div>
+
+                </div>
+
+                <div class="amount-details">
+
+                    <div class="ad-p1">
+                        <h3>Subtotal</h3>
+                        <p id="subtotal-amount">R.s <span id="subtotal-price"></span></p>
+                    </div>
+
+                    <div class="ad-p2">
+                        <h3>Delivery Fee</h3>
+                        <p id="delivery-fee">R.s 250</p>
+                    </div>
+
+                    <div class="ad-p3">
+                        <h3>Total Amount</h3>
+                        <p id="total-amount">R.s <span id="total-price"></span></p>
+                    </div>
+
+                    <button onclick="showToast('<i class=\'fa-solid fa-square-check\' style=\'color: #63E6BE;\'></i> Payment successful!')">Make Payment</button>
+                </div>
+            
+            </div>
+    
+            <div class="img-part">
+                <img src="/images/payment detail img.jpg">
+
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/?lang=en" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script src="paypage.js"></script>
+</body>
+</html>
