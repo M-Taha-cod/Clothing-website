@@ -780,6 +780,7 @@ header{
     color: white;
     cursor: pointer;
     font-weight: bold;
+    width: "100%";
 }
 
 }
